@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
         "Integrated technical indicators like RSI & Moving Averages to enhance predictive accuracy.",
         "Applied findings to support financial decision-making and business strategy."
       ],
-      githubUrl: "https://github.com/GaurabKC/stock-prediction",
+      githubUrl: "https://github.com/whogaurab/RNN-LSTM-Price-Movement-Predictions-For-Trading-Algorithms",
       imageUrl: "/lovable-uploads/e4354a1f-1456-4305-934e-da6c63c37efb.png"
     },
     {
@@ -29,7 +29,16 @@ const Projects: React.FC = () => {
         "Developed a deep convolutional GAN model to generate hyper-realistic synthetic human faces.",
         "Explored applications of generative AI in media, security, and digital identity verification."
       ],
-      githubUrl: "https://github.com/GaurabKC/deepfake-generator",
+      githubUrl: "https://github.com/whogaurab/Deepfake-image-generator-using-DCGAN",
+      imageUrl: "/lovable-uploads/564bf10e-e334-42a2-bfbe-35716210ecb0.png"
+    }
+    {
+      title: "Plant Disease Detection Using YOLOV9",
+      description: [
+        "Developed a deep convolutional GAN model to generate hyper-realistic synthetic human faces.",
+        "Explored applications of generative AI in media, security, and digital identity verification."
+      ],
+      githubUrl: "https://github.com/whogaurab/PlantDiseaseDetection",
       imageUrl: "/lovable-uploads/564bf10e-e334-42a2-bfbe-35716210ecb0.png"
     }
   ];
