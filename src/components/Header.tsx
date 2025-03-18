@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { FileText, Github, Linkedin, Mail } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -30,7 +31,7 @@ const Header: React.FC = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-4 px-6 transition-all duration-300",
         scrollPosition > 50 
-          ? "bg-white/80 backdrop-blur-md shadow-sm" 
+          ? "bg-white/80 backdrop-blur-md shadow-sm dark:bg-background/80 dark:shadow-lg" 
           : "bg-transparent"
       )}
     >
@@ -73,6 +74,8 @@ const Header: React.FC = () => {
         </nav>
         
         <div className="flex items-center space-x-4">
+          <ThemeToggle />
+          
           <a 
             href="mailto:gaurab3854@gmail.com" 
             className="text-primary/80 hover:text-primary transition-colors" 
@@ -100,7 +103,7 @@ const Header: React.FC = () => {
           </a>
           <a 
             href="#resume" 
-            className="hidden md:flex items-center space-x-1 text-xs font-medium py-1.5 px-3 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors"
+            className="hidden md:flex items-center space-x-1 text-xs font-medium py-1.5 px-3 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors dark:bg-primary dark:text-primary-foreground"
           >
             <FileText size={14} />
             <span>Resume</span>
