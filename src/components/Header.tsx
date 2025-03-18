@@ -84,7 +84,7 @@ const Header: React.FC = () => {
             <Mail size={18} />
           </a>
           <a 
-            href="https://github.com/GaurabKC" 
+            href="https://github.com/whogaurab" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-primary/80 hover:text-primary transition-colors" 
@@ -93,7 +93,7 @@ const Header: React.FC = () => {
             <Github size={18} />
           </a>
           <a 
-            href="https://www.linkedin.com/in/gaurabkc" 
+            href="https://www.linkedin.com/in/whogaurab/" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-primary/80 hover:text-primary transition-colors" 

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import PageTransition from './PageTransition';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Profile: React.FC = () => {
   return (
@@ -8,9 +9,11 @@ const Profile: React.FC = () => {
       <PageTransition animation="fade-in">
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/3 flex justify-center">
-            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100"></div>
-              <div className="absolute inset-0 flex items-center justify-center text-4xl font-bold text-primary/80">GK</div>
+            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-xl dark:border-gray-800">
+              <Avatar className="w-full h-full">
+                <AvatarImage src="/lovable-uploads/7c586bcd-250c-4d24-a171-14218c054aff.png" alt="Gaurab Kumar Choudhary" className="w-full h-full object-cover" />
+                <AvatarFallback className="text-4xl font-bold text-primary/80">GK</AvatarFallback>
+              </Avatar>
             </div>
           </div>
           

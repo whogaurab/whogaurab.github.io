@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                 <Mail size={20} />
               </a>
               <a 
-                href="https://github.com/GaurabKC" 
+                href="https://github.com/whogaurab" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-white/70 hover:text-white transition-colors" 
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://www.linkedin.com/in/gaurabkc" 
+                href="https://www.linkedin.com/in/whogaurab/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-white/70 hover:text-white transition-colors" 
