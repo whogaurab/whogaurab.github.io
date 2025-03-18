@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-primary text-white py-10">
+    <footer className="bg-black text-white py-10">
       <div className="max-w-4xl mx-auto px-6 sm:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">

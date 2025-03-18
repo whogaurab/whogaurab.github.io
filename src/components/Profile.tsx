@@ -44,9 +44,6 @@ const Profile: React.FC = () => {
                 <div className="pill">
                   <span>gaurab3854@gmail.com</span>
                 </div>
-                <div className="pill">
-                  <span>9875544510</span>
-                </div>
               </div>
             </PageTransition>
           </div>
