@@ -37,7 +37,7 @@ const Header: React.FC = () => {
     >
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <span className="text-xl font-medium">Gaurab KC</span>
+          <span className="text-xl font-medium">Gaurab</span>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">

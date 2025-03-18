@@ -8,6 +8,7 @@ interface Project {
   title: string;
   description: string[];
   githubUrl: string;
+  imageUrl: string;
 }
 
 const Projects: React.FC = () => {
@@ -19,7 +20,8 @@ const Projects: React.FC = () => {
         "Integrated technical indicators like RSI & Moving Averages to enhance predictive accuracy.",
         "Applied findings to support financial decision-making and business strategy."
       ],
-      githubUrl: "https://github.com/GaurabKC/stock-prediction"
+      githubUrl: "https://github.com/GaurabKC/stock-prediction",
+      imageUrl: "/lovable-uploads/e4354a1f-1456-4305-934e-da6c63c37efb.png"
     },
     {
       title: "Deepfake Image Generator using DCGAN",
@@ -27,7 +29,8 @@ const Projects: React.FC = () => {
         "Developed a deep convolutional GAN model to generate hyper-realistic synthetic human faces.",
         "Explored applications of generative AI in media, security, and digital identity verification."
       ],
-      githubUrl: "https://github.com/GaurabKC/deepfake-generator"
+      githubUrl: "https://github.com/GaurabKC/deepfake-generator",
+      imageUrl: "/lovable-uploads/564bf10e-e334-42a2-bfbe-35716210ecb0.png"
     }
   ];
   
@@ -41,9 +44,9 @@ const Projects: React.FC = () => {
             <div className="relative group h-full">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg -m-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
-              <div className="relative h-full bg-white rounded-lg border border-secondary/80 p-6 hover:shadow-md transition-all">
+              <div className="relative h-full bg-white dark:bg-gray-800 rounded-lg border border-secondary/80 p-6 hover:shadow-md transition-all">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-lg font-semibold">{project.title}</h3>
+                  <h3 className="text-lg font-semibold text-primary dark:text-white">{project.title}</h3>
                   
                   <a 
                     href={project.githubUrl} 
@@ -54,6 +57,14 @@ const Projects: React.FC = () => {
                   >
                     <Github size={18} />
                   </a>
+                </div>
+                
+                <div className="mb-4 h-40 overflow-hidden rounded-md">
+                  <img 
+                    src={project.imageUrl} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
                 
                 <ul className="space-y-2 text-sm text-muted-foreground mb-4">
