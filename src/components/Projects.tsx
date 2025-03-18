@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
         "Applied findings to support financial decision-making and business strategy."
       ],
       githubUrl: "https://github.com/whogaurab/RNN-LSTM-Price-Movement-Predictions-For-Trading-Algorithms",
-      imageUrl: "/lovable-uploads/e4354a1f-1456-4305-934e-da6c63c37efb.png"
+      imageUrl: "/lovable-uploads/Muvrwo0iPNQVc9oCSgA0HP3pkro.png"
     },
     {
       title: "Deepfake Image Generator using DCGAN",
@@ -35,11 +35,10 @@ const Projects: React.FC = () => {
     {
       title: "Plant Disease Detection Using YOLOV9",
       description: [
-        "Developed a deep convolutional GAN model to generate hyper-realistic synthetic human faces.",
-        "Explored applications of generative AI in media, security, and digital identity verification."
+        " real-time processing capability and high accuracy, YOLOv9 provides a valuable solution for early disease detection, helping farmers take timely action to protect their crops and increase yield..",
       ],
       githubUrl: "https://github.com/whogaurab/PlantDiseaseDetection",
-      imageUrl: "/lovable-uploads/564bf10e-e334-42a2-bfbe-35716210ecb0.png"
+      imageUrl: "/lovable-uploads/e4354a1f-1456-4305-934e-da6c63c37efb.png"
     }
   ];
   
@@ -97,6 +96,12 @@ const Projects: React.FC = () => {
                   {project.title.includes("Deepfake") && (
                     <>
                       <div className="pill">GAN</div>
+                      <div className="pill">Computer Vision</div>
+                    </>
+                  )}
+                  {project.title.includes("Plant Disease Detection Using YOLOV9") && (
+                    <>
+                      <div className="pill">YOLOV9</div>
                       <div className="pill">Computer Vision</div>
                     </>
                   )}
