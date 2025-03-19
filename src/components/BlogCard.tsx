@@ -22,7 +22,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
     <PageTransition animation="fade-in" delay={`${0.1 + index * 0.05}s`}>
       <Link 
         to={`/blog/${slug}`} 
-        className="group flex items-center gap-4 py-4 border-b border-secondary/50 hover:bg-secondary/20 transition-colors px-2 rounded-md"
+        className="group flex flex-col md:flex-row items-start md:items-center gap-4 py-4 border-b border-secondary/50 hover:bg-secondary/10 transition-colors px-2 rounded-md"
       >
         <div className="flex-shrink-0 w-24 h-24 overflow-hidden rounded-md">
           <img 

@@ -28,7 +28,7 @@ const BlogPost: React.FC = () => {
   
   if (!post) return null;
   
-  // Convert markdown content to HTML (simple version)
+  // Convert markdown content to HTML (more comprehensive version)
   const renderMarkdown = (content: string) => {
     let html = content;
     
@@ -37,23 +37,36 @@ const BlogPost: React.FC = () => {
     html = html.replace(/^## (.*$)/gm, '<h2 class="text-2xl font-semibold mt-6 mb-3">$1</h2>');
     html = html.replace(/^### (.*$)/gm, '<h3 class="text-xl font-medium mt-5 mb-2">$1</h3>');
     
-    // Convert lists
-    html = html.replace(/^\- (.*)$/gm, '<li class="ml-6 mb-2">• $1</li>');
-    html = html.replace(/^\*\* (.*) \*\*$/gm, '<strong>$1</strong>');
+    // Convert bold text
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     
-    // Convert paragraphs (simple)
+    // Convert lists with proper spacing and formatting
+    const replaceList = (match: string) => {
+      const items = match.split('\n- ').filter(Boolean);
+      if (items.length === 0) return match;
+      
+      return '<ul class="list-disc pl-6 space-y-2 my-4">\n' + 
+        items.map(item => `<li>${item.trim()}</li>`).join('\n') + 
+        '\n</ul>';
+    };
+    
+    // Find list blocks and replace them
+    const listPattern = /(?:^|\n)- .+(?:\n- .+)*/g;
+    html = html.replace(listPattern, replaceList);
+    
+    // Convert paragraphs (with better handling)
     const paragraphs = html.split('\n\n');
     html = paragraphs.map(para => {
       if (
         para.startsWith('<h1') || 
         para.startsWith('<h2') || 
         para.startsWith('<h3') || 
-        para.startsWith('<li') ||
+        para.startsWith('<ul') ||
         para.trim() === ''
       ) {
         return para;
       }
-      return `<p class="mb-4">${para}</p>`;
+      return `<p class="my-4 text-muted-foreground">${para}</p>`;
     }).join('\n');
     
     return html;
@@ -64,7 +77,7 @@ const BlogPost: React.FC = () => {
       <Header />
       
       <main className="flex-1">
-        <article className="section max-w-3xl mx-auto">
+        <article className="max-w-3xl mx-auto px-4 md:px-6 py-8">
           <div className="mb-6">
             <Link 
               to="/blog" 
@@ -76,12 +89,12 @@ const BlogPost: React.FC = () => {
           </div>
           
           <PageTransition animation="fade-in">
-            <div className="mb-6">
+            <div className="mb-8">
               <h1 className="text-3xl md:text-4xl font-bold mb-3 text-primary dark:text-white">{post.title}</h1>
               <div className="text-muted-foreground">{post.date}</div>
             </div>
             
-            <div className="mb-8 h-[250px] md:h-[350px] overflow-hidden rounded-lg">
+            <div className="mb-10 h-[250px] md:h-[350px] overflow-hidden rounded-lg">
               <img 
                 src={post.imageUrl}
                 alt={post.title}
