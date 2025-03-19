@@ -31,11 +31,13 @@ const Projects: React.FC = () => {
       ],
       githubUrl: "https://github.com/whogaurab/Deepfake-image-generator-using-DCGAN",
       imageUrl: "/lovable-uploads/564bf10e-e334-42a2-bfbe-35716210ecb0.png"
-    }
+    },
     {
       title: "Plant Disease Detection Using YOLOV9",
       description: [
-        " real-time processing capability and high accuracy, YOLOv9 provides a valuable solution for early disease detection, helping farmers take timely action to protect their crops and increase yield..",
+        "Implemented YOLOv9 for real-time detection of plant diseases to help farmers identify issues early.",
+        "Achieved high accuracy in identifying various plant diseases across different crop types.",
+        "Developed solution with real-time processing capability for immediate field application."
       ],
       githubUrl: "https://github.com/whogaurab/PlantDiseaseDetection",
       imageUrl: "/lovable-uploads/e4354a1f-1456-4305-934e-da6c63c37efb.png"
@@ -99,7 +101,7 @@ const Projects: React.FC = () => {
                       <div className="pill">Computer Vision</div>
                     </>
                   )}
-                  {project.title.includes("Plant Disease Detection Using YOLOV9") && (
+                  {project.title.includes("Plant Disease Detection") && (
                     <>
                       <div className="pill">YOLOV9</div>
                       <div className="pill">Computer Vision</div>

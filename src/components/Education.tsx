@@ -56,17 +56,17 @@ const Education: React.FC = () => {
   ];
   
   return (
-    <section id="education" className="section bg-secondary/40">
+    <section id="education" className="section bg-background">
       <SectionHeading title="Education" />
       
       <div className="space-y-8">
         {educationItems.map((item, idx) => (
           <PageTransition key={item.institution} animation="fade-in-left" delay={`${0.1 + idx * 0.1}s`}>
-            <div className="bg-white/50 rounded-lg p-6 border border-secondary/80 hover:border-primary/20 transition-all">
+            <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-6 border border-secondary/80 hover:border-primary/20 transition-all">
               <div className="mb-3">
                 <h4 className="text-lg font-semibold">{item.institution}</h4>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                  <div className="text-primary/80 font-medium">{item.degree}</div>
+                  <div className="text-primary/80 dark:text-primary/90 font-medium">{item.degree}</div>
                   <div className="hidden sm:block text-muted-foreground">•</div>
                   <div className="text-sm text-muted-foreground">{item.percentage}</div>
                 </div>
