@@ -3,9 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { FileText, Github, Linkedin, Mail } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
   
   useEffect(() => {
     const handleScroll = () => {
@@ -37,40 +40,51 @@ const Header: React.FC = () => {
     >
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <span className="text-xl font-medium">Gaurab</span>
+          <Link to="/" className="text-xl font-medium">Gaurab</Link>
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          <button 
-            onClick={() => scrollToSection('about')}
+          {isHomePage ? (
+            <>
+              <button 
+                onClick={() => scrollToSection('about')}
+                className="text-sm text-primary/80 hover:text-primary link-underline"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => scrollToSection('experience')}
+                className="text-sm text-primary/80 hover:text-primary link-underline"
+              >
+                Experience
+              </button>
+              <button 
+                onClick={() => scrollToSection('skills')}
+                className="text-sm text-primary/80 hover:text-primary link-underline"
+              >
+                Skills
+              </button>
+              <button 
+                onClick={() => scrollToSection('education')}
+                className="text-sm text-primary/80 hover:text-primary link-underline"
+              >
+                Education
+              </button>
+              <button 
+                onClick={() => scrollToSection('projects')}
+                className="text-sm text-primary/80 hover:text-primary link-underline"
+              >
+                Projects
+              </button>
+            </>
+          ) : null}
+          
+          <Link 
+            to="/blog" 
             className="text-sm text-primary/80 hover:text-primary link-underline"
           >
-            About
-          </button>
-          <button 
-            onClick={() => scrollToSection('experience')}
-            className="text-sm text-primary/80 hover:text-primary link-underline"
-          >
-            Experience
-          </button>
-          <button 
-            onClick={() => scrollToSection('skills')}
-            className="text-sm text-primary/80 hover:text-primary link-underline"
-          >
-            Skills
-          </button>
-          <button 
-            onClick={() => scrollToSection('education')}
-            className="text-sm text-primary/80 hover:text-primary link-underline"
-          >
-            Education
-          </button>
-          <button 
-            onClick={() => scrollToSection('projects')}
-            className="text-sm text-primary/80 hover:text-primary link-underline"
-          >
-            Projects
-          </button>
+            Blogs
+          </Link>
         </nav>
         
         <div className="flex items-center space-x-4">
