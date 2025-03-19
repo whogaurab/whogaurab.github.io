@@ -116,7 +116,7 @@ const Header: React.FC = () => {
             <Linkedin size={18} />
           </a>
           <a 
-            href="public/resume.pdf" 
+            href="/public/resume.pdf" 
             className="hidden md:flex items-center space-x-1 text-xs font-medium py-1.5 px-3 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors dark:bg-primary dark:text-primary-foreground"
           >
             <FileText size={14} />
